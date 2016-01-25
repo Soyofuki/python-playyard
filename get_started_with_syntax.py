@@ -2,16 +2,16 @@
 # 阅读指南：本文不是文档。通过通读本文，可以了解 Python 基本的语法及一些常用的方法。读者可以将其与其他语言比较，理解其意图与含义。
 # 目标读者：具有程序设计基础知识，理解面向对象程序设计基本概念的程序员
  
-# 模块导入
-from math import pi, sqrt # 同时导入多个模块
-from re import match as re_match # 重命名
+# import modules
+from math import pi, sqrt # import multiple 
+from re import match as re_match # set alias
  
-# 类的定义与即成
+# class definition and inheritance
 class Animal:
  __character = "Positive" # 不会经过 "from module_name import *" 导入
  _gender = "Unknown" # 仅表示建议不访问
  """
- 文档注释，将在运行时输出
+ Document comments, will be retained in runtime
  """
  def __init__(self, name, age):
   self.name = name
@@ -23,7 +23,7 @@ class Animal:
  def live(self):
   print("Alive!")
  
- def train(behavior): # 修饰器
+ def train(behavior): # decorator
   def wrap():
    behavior()
   return wrap
@@ -39,7 +39,7 @@ class Animal:
   else:
    print("Gender not set")
  
-class Wolf(Animal): # 继承于 Animal 类
+class Wolf(Animal): # inherited from Animal class
  def shout(self, default = "Woof!", *sounds, **tones):
   print(default)
   if len(sounds) &gt; 0:
