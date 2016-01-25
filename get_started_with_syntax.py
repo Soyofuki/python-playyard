@@ -60,7 +60,7 @@ class Dog(Wolf):
  def __add__(self, other): # 改写 + 运算符。其他运算符也可以类似形式改写
   return Dog(self.name + " and " + other.name, self.age + other.age)
  
- def __specialBehavior(self): # 该方法不会经过 "from module_name import *" 导入
+ def __special_behavior(self): # 该方法不会经过 "from module_name import *" 导入
   print("Read books!")
  
  @classmethod # 定义类方法
@@ -88,8 +88,8 @@ def add_one(x):
  return x + 1
  
 nums = [1,2,3]
-resultMap = list(map(add_one,nums)) # [2,3,4]
-resultFilter = list(filter(lambda x:x%2==0,nums)) # [1,3]
+result_map = list(map(add_one,nums)) # [2,3,4]
+result_filter = list(filter(lambda x:x%2==0,nums)) # [1,3]
 nums[0:2:1] # [1,2,3]
 nums[1:-1] # [2,3]
 first = nums[0]
@@ -130,7 +130,7 @@ a, *b, c = [1,2,3,4] # a 为 1, b 为 [2,3]，c 为 4
 b = 5 if a == 2 else 3 # b 为 3 
  
 # 字符串格式
-stringFormat = "String: {0} {1} {x}".format("A","B",x="C")
+string_format_sample = "String: {0} {1} {x}".format("A","B",x="C")
  
 # 异常处理
 try:
