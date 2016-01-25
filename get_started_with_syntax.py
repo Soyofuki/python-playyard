@@ -1,6 +1,5 @@
-# 本文目的：总览 Python 的主要语法，并供日后备忘。
-# 阅读指南：本文不是文档。通过通读本文，可以了解 Python 基本的语法及一些常用的方法。读者可以将其与其他语言比较，理解其意图与含义。
-# 目标读者：具有程序设计基础知识，理解面向对象程序设计基本概念的程序员
+# Objective: Get started with Python syntax.
+# Audience: Programmers with basic knowledge of OOP.
  
 # import modules
 from math import pi, sqrt # import multiple 
@@ -8,8 +7,8 @@ from re import match as re_match # set alias
  
 # class definition and inheritance
 class Animal:
- __character = "Positive" # 不会经过 "from module_name import *" 导入
- _gender = "Unknown" # 仅表示建议不访问
+ __character = "Positive" # won't be imported via "from module_name import *"
+ _gender = "Unknown" # not suggested to access
  """
  Document comments, will be retained in runtime
  """
@@ -17,7 +16,7 @@ class Animal:
   self.name = name
   self.age = age
  
- def shout(self): # 定义类的方法
+ def shout(self): # define a method
   print("Sound")
  
  def live(self):
@@ -28,11 +27,11 @@ class Animal:
    behavior()
   return wrap
  
- @property # 属性，常用于实现只读特性
+ @property # a read-only property
  def gender(self):
   return self._gender
  
- @gender.setter # 实现属性的赋值
+ @gender.setter # setter for gender property
  def gender(self, value):
   if value:
    self._gender = value
@@ -57,17 +56,17 @@ class Dog(Wolf):
   print("Bite?")
   super().shout()
  
- def __add__(self, other): # 改写 + 运算符。其他运算符也可以类似形式改写
+ def __add__(self, other): # change the behavior of + operator
   return Dog(self.name + " and " + other.name, self.age + other.age)
  
- def __special_behavior(self): # 该方法不会经过 "from module_name import *" 导入
+ def __special_behavior(self): # won't be imported via "from module_name import *"
   print("Read books!")
  
- @classmethod # 定义类方法
+ @classmethod # define class method
  def find_a_puppy(cls, name):
   return cls(name, 0)
  
- @staticmethod # 定义静态方法
+ @staticmethod # define static method
  def find(times)
   print((self.name + "!") * 3)
  
@@ -75,7 +74,7 @@ class Dog(Wolf):
  def run():
   print("train running")
  
-# 访问类
+# define an object of the class
 puppy = Dog("Puppy", 5)
 print(puppy.age) # 5
 puppy.live() # Alive!
@@ -83,7 +82,7 @@ puppy.shout() # Woo
 puppy.bite() # Bite? Woof!
 print(_Animal__character) # Positive
  
-# 数组相关
+# array
 def add_one(x):
  return x + 1
  
@@ -114,25 +113,25 @@ for i in infinitive_loop():
 else:
  print("finished without break")
  
-# 集合
+# set
 num_set = {1,2,3}
 print(3 in num_set) # True
  
-# 字典
+# dictionary
 age_dictionary = {"Alice":17, "Bob":18}
 print(age_dictionary["Alice"]
  
-# 多元组
-immutable_tuple = ("A","B") # tuple 始终无法被更改
+# tuple
+immutable_tuple = ("A","B") # tuple is immutable
 simple_tuple = 1,2,3
 a,b = immutable_tuple
 a, *b, c = [1,2,3,4] # a 为 1, b 为 [2,3]，c 为 4
 b = 5 if a == 2 else 3 # b 为 3 
  
-# 字符串格式
+# format a string
 string_format_sample = "String: {0} {1} {x}".format("A","B",x="C")
  
-# 异常处理
+# exception handling
 try:
  print(1/0)
  assert (2 + 2 == 6), "wrong answer" # AssertionError:wrong answer
