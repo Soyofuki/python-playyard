@@ -94,7 +94,7 @@ nums[1:-1] # [2,3]
 first = nums[0]
 print(list(range(3))) # [0,1,2]
  
-# Generator 与循环
+# Generator and loop
 def infinitive_loop():
  i = 1
  while True:
